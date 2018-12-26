@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <rootUrl>https://www.kujiale.com</rootUrl>
+    <headers>
+        <!-- 配置为自己的参数 -->
+        <!--<header name="Content-Type" value="application/json"></header>-->
+        <header name="Content-Type" value="text/plain;charset=utf-8" ></header>
+        <header name="User-Agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"></header>
+    </headers>
+    <params>
+    	<param name="test" value="value"></param>
+    </params>
+    <project_name>接口自动化测试报告</project_name>
+</root>

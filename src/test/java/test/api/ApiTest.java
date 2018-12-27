@@ -62,6 +62,7 @@ public class ApiTest extends TestBase {
 	//http请求客户端对象
 	private static HttpClient client;
 
+
 	/**
 	 * 初始化测试数据
 	 * 
@@ -148,13 +149,16 @@ public class ApiTest extends TestBase {
 		// 封装请求方法
 		HttpUriRequest method = parseHttpRequest(apiDataBean.getUrl(),
 				apiDataBean.getMethod(), apiParam);
+
 		String responseData;
 		try {
 			// 执行
 			HttpResponse response = client.execute(method);
 			int responseStatus = response.getStatusLine().getStatusCode();
 			if (StringUtil.isNotEmpty(apiDataBean.getStatus())) {
-				Assert.assertEquals(responseStatus, apiDataBean.getStatus(),
+				String apiStatus = apiDataBean.getStatus().trim();
+				apiStatus = apiStatus.substring(0,3);
+				Assert.assertEquals(responseStatus+"",apiStatus,
 						"返回状态码与预期不符合!");
 			} else {
 				// 非2开头状态码为异常请求，抛异常后会进行重跑
@@ -162,12 +166,9 @@ public class ApiTest extends TestBase {
 					throw new ErrorRespStatusException("返回状态码异常："
 							+ responseStatus);
 				}
-				// 300重定向数据获取
+				// 300+重定向数据获取
 				if (300 >= responseStatus || responseStatus < 400) {
-					if (response.getStatusLine().getStatusCode() == 302) {
-						String locationUrl = response.getLastHeader("Location").getValue();
-						parseHttpRequest(locationUrl,"get","");//跳转到重定向的url
-					}
+
 				}
 
 			}

@@ -12,9 +12,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.content.FileBody;
@@ -236,37 +234,49 @@ public class ApiTest extends TestBase {
 		ReportUtil.log("method:" + method);
 		ReportUtil.log("url:" + url);
 		ReportUtil.log("param:" + param.replace("\r\n", "").replace("\n", ""));
+		HttpEntity entity = new StringEntity(param, "UTF-8");
+
 		if ("post".equalsIgnoreCase(method)) {
 			// 封装post方法
 			HttpPost postMethod = new HttpPost(url);
 			postMethod.setHeaders(publicHeaders);
-			HttpEntity entity = new StringEntity(param, "UTF-8");
 			postMethod.setEntity(entity);
 			return postMethod;
-		} else if ("upload".equalsIgnoreCase(method)) {
+		}  else if("get".equalsIgnoreCase(method)){
+			// 封装get方法
+			HttpGet getMethod = new HttpGet(url);
+			getMethod.setHeaders(publicHeaders);
+			return getMethod;
+		}else if ("put".equalsIgnoreCase(method)){
+			// 封装put方法
+			HttpPut putMethod = new HttpPut(url);
+			putMethod.setHeaders(publicHeaders);
+			putMethod.setEntity(entity);
+			return putMethod;
+		}else if ("upload".equalsIgnoreCase(method)) {
 			HttpPost postMethod = new HttpPost(url);
 			@SuppressWarnings("unchecked")
-            Map<String, String> paramMap = JSON.parseObject(param,
+			Map<String, String> paramMap = JSON.parseObject(param,
 					HashMap.class);
-			MultipartEntity entity = new MultipartEntity();
+			MultipartEntity mEntity = new MultipartEntity();
 			for (String key : paramMap.keySet()) {
 				String value = paramMap.get(key);
 				Matcher m = funPattern.matcher(value);
 				if (m.matches() && m.group(1).equals("bodyfile")) {
 					value = m.group(2);
-					entity.addPart(key, new FileBody(new File(value)));
+					mEntity.addPart(key, new FileBody(new File(value)));
 				} else {
-					entity.addPart(key, new StringBody(paramMap.get(key)));
+					mEntity.addPart(key, new StringBody(paramMap.get(key)));
 				}
 			}
 			postMethod.setEntity(entity);
 			return postMethod;
-		} else {
-			// 封装get方法
-			HttpGet getMethod = new HttpGet(url);
-			getMethod.setHeaders(publicHeaders);
-			return getMethod;
-		}// delete put....
+		}else {
+//			封装delete方法
+			HttpDelete deleteMethod = new HttpDelete(url);
+			deleteMethod.setHeaders(publicHeaders);
+			return deleteMethod;
+		}
 	}
 
 	/**

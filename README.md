@@ -115,7 +115,6 @@ username=$.username;id=$.userId
 
 - 支持xml
 - 支持auth
-- 支持delete，put等方法
 - 支持验证数据库
 - 待加+++++
 
@@ -141,3 +140,4 @@ username=$.username;id=$.userId
 #2018/12/28
 - AssertJ替换Assert
 - 添加AssertJ添加对json的支持工具类：AssertJSON
+- 支持delete，put方法

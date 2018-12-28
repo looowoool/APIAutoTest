@@ -32,8 +32,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -45,7 +44,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-				<span class='label suite-start-time'>Dec 26, 2018, 6:41:02 PM</span>
+				<span class='label suite-start-time'>Dec 28, 2018, 11:57:57 AM</span>
 			</a>
 			<a href='#!'>
 				<span class='label'>v3.0.3</span>
@@ -67,7 +66,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -121,7 +119,7 @@
 					<span><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong'>1</span> test(s) failed, <span class='strong'>0</span> others
+					<span class='strong'>0</span> test(s) failed, <span class='strong'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -136,7 +134,7 @@
 					<span><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong'>1</span> step(s) failed, <span class='strong'>0</span> others
+					<span class='strong'>0</span> step(s) failed, <span class='strong'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -151,91 +149,17 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>desc:获取用户管理首页,method:get,url:/api/info/global,par...</span>
-						<span class='test-time'>Dec 26, 2018, 6:41:02 PM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Dec 26, 2018, 6:41:02 PM</span>
-	<span class='label end-time'>Dec 26, 2018, 6:41:02 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+111ms</span>
-</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>method:get</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>url:https://www.kujiale.com/api/info/global</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>param:</td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'><pre>api.excepions.ErrorRespStatusException: 返回状态码异常：405
-	at test.api.ApiTest.apiTest(ApiTest.java:162)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:1049)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1254)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
-	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-</pre></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>desc:业务系统登录接口,method:post,url:/api/login,param:{"...</span>
-						<span class='test-time'>Dec 26, 2018, 6:41:02 PM</span>
+						<span class='test-name'>desc:获取优秀设计杂志社,method:get,url:/api/designcase/koo...</span>
+						<span class='test-time'>Dec 28, 2018, 11:57:57 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 26, 2018, 6:41:02 PM</span>
-	<span class='label end-time'>Dec 26, 2018, 6:41:02 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+272ms</span>
+	<span class='label start-time'>Dec 28, 2018, 11:57:57 AM</span>
+	<span class='label end-time'>Dec 28, 2018, 11:57:57 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+334ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -249,32 +173,32 @@
 			<tbody>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>method:post</td>
+					<td class='timestamp'>11:57:58 AM</td>
+					<td class='step-details'>method:get</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>url:https://www.kujiale.com/api/login</td>
+					<td class='timestamp'>11:57:58 AM</td>
+					<td class='step-details'>url:https://www.kujiale.com/api/designcase/koolmagazine?num=4</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>param:{"account":"13003697518","password":"12345678a"}</td>
+					<td class='timestamp'>11:57:58 AM</td>
+					<td class='step-details'>param:</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>resp:{"c":"MISSING_ACCOUNT","m":"Required String parameter 'account' is not present"}</td>
+					<td class='timestamp'>11:57:58 AM</td>
+					<td class='step-details'>resp:{"c":"0","m":"","d":[{"magazineId":14,"obsMagazineId":"3FO4K4VYBDUL","coverImage":"https://qhyxpicoss.kujiale.com/2018/12/26/LQRUGGAKAQBZMBZIAAAAAAA8_3840x2160.jpg","name":"2018.12","title":"温暖乡村风","color":"cbc5bc","onlineTime":1545014775000,"link":"https://www.kujiale.com/activities/design_kujia_201812","tags":["法式","乡村风解读","多样性"]},{"magazineId":13,"obsMagazineId":"3FO4K4VYBNVO","coverImage":"https://qhyxpicoss.kujiale.com/2018/11/30/LQARORQKAQBZOEUKAAAAADI8_2560x1440.jpg","name":"2018.11","title":"如何给业主满意报价单（上）","color":"a0907d","onlineTime":1542888396000,"link":"https://www.kujiale.com/activities/design_kujia_201811","tags":["体验","报价","互联网思维"]},{"magazineId":12,"obsMagazineId":"3FO4K4VYBKJN","coverImage":"https://qhyxpicoss.kujiale.com/2018/11/07/LPQ5SWIKAQBZMYNFAAAAADQ8_3000x4000.jpg","name":"2018.10","title":"功能区集合，小空间变大","color":"a09a93","onlineTime":1539054656000,"link":"https://www.kujiale.com/activities/design_kujia_201810","tags":["小户型","软装搭配","精装房"]},{"magazineId":11,"obsMagazineId":"3FO4K4VYBUKQ","coverImage":"https://qhyxpicoss.kujiale.com/2018/10/02/LOY7YKIKAQBZO3N2AAAAAAY8_1920x1080.jpg","name":"2018.09","title":"创意与生活不分离","color":"929392","onlineTime":1535977056000,"link":"https://www.kujiale.com/activities/design_kujia_201809","tags":["颜色","风格","日常","烟火味"]}]}</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
-					<td class='step-details'>验证数据：{"isBusinessAccount":false,"userId":"3FO4JHV7QGKK"}</td>
+					<td class='timestamp'>11:57:58 AM</td>
+					<td class='step-details'>验证数据：{"c":"0","m":"","d":[{"magazineId":14,"obsMagazineId":"3FO4K4VYBDUL","coverImage":"https://qhyxpicoss.kujiale.com/2018/12/26/LQRUGGAKAQBZMBZIAAAAAAA8_3840x2160.jpg","name":"2018.12","title":"温暖乡村风","color":"cbc5bc","onlineTime":1545014775000,"link":"https://www.kujiale.com/activities/design_kujia_201812","tags":["法式","乡村风解读","多样性"]},{"magazineId":13,"obsMagazineId":"3FO4K4VYBNVO","coverImage":"https://qhyxpicoss.kujiale.com/2018/11/30/LQARORQKAQBZOEUKAAAAADI8_2560x1440.jpg","name":"2018.11","title":"如何给业主满意报价单（上）","color":"a0907d","onlineTime":1542888396000,"link":"https://www.kujiale.com/activities/design_kujia_201811","tags":["体验","报价","互联网思维"]},{"magazineId":12,"obsMagazineId":"3FO4K4VYBKJN","coverImage":"https://qhyxpicoss.kujiale.com/2018/11/07/LPQ5SWIKAQBZMYNFAAAAADQ8_3000x4000.jpg","name":"2018.10","title":"功能区集合，小空间变大","color":"a09a93","onlineTime":1539054656000,"link":"https://www.kujiale.com/activities/design_kujia_201810","tags":["小户型","软装搭配","精装房"]},{"magazineId":11,"obsMagazineId":"3FO4K4VYBUKQ","coverImage":"https://qhyxpicoss.kujiale.com/2018/10/02/LOY7YKIKAQBZO3N2AAAAAAY8_1920x1080.jpg","name":"2018.09","title":"创意与生活不分离","color":"929392","onlineTime":1535977056000,"link":"https://www.kujiale.com/activities/design_kujia_201809","tags":["颜色","风格","日常","烟火味"]}]}</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>6:41:02 PM</td>
+					<td class='timestamp'>11:57:58 AM</td>
 					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
@@ -306,93 +230,7 @@
 	<!-- subview right -->
 
 </div>
-<!-- test view --><!-- category view --><div id='exception-view' class='view hide'>
-	
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-					<i class='material-icons'>search</i> Search
-				</a>
-				
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-				
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-
-	<div class='subview-left left'>
-		
-		<div class='view-summary'>
-			<h5>Exceptions</h3>
-			<ul id='exception-collection' class='exception-collection'>
-				
-				<li class='exception displayed active'>
-					<div class='exception-heading'>
-						<span class='exception-name'>api.excepions.ErrorRespStatusException</span>
-						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-					</div>
-					<div class='exception-content hide'>	
-						<div class='exception-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Dec 26, 2018, 6:41:02 PM</td>
-										<td class='linked' test-id='1'>desc:获取用户管理首页,method:get,url:/api/info/global,par...</td>
-										<td><pre><pre>api.excepions.ErrorRespStatusException: 返回状态码异常：405
-	at test.api.ApiTest.apiTest(ApiTest.java:162)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:1049)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1254)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
-	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-</pre></pre></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='exception-name'></h5>
-		</div>
-	</div>
-</div>
-<!-- exception view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -400,31 +238,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 26, 2018, 6:41:02 PM</div>
+					<div class='panel-lead'>Dec 28, 2018, 11:57:57 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 26, 2018, 6:41:02 PM</div>
+			 		<div class='panel-lead'>Dec 28, 2018, 11:57:58 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>537ms</div>
+					<div class='panel-lead'>412ms</div>
 				</div>
 			</div>
 		</div>
@@ -437,21 +275,21 @@
 		<script>
 			var statusGroup = {
 				passParent: 1,
-				failParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
 				passChild: 1,
-				failChild: 1,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 9,
+				exceptionsChild: 5,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

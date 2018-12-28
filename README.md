@@ -137,3 +137,7 @@ username=$.username;id=$.userId
 #2018/12/26
 - 添加post对302重定向的处理
 - 关于ExtentReports输出html不能显示css的问题
+
+#2018/12/28
+- AssertJ替换Assert
+- 添加AssertJ添加对json的支持工具类：AssertJSON

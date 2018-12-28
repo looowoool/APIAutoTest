@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONPath;
 import api.beans.BaseBean;
 import api.utils.*;
 import org.dom4j.DocumentException;
-import org.testng.Assert;
+import static org.assertj.core.api.Assertions.*;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -41,7 +41,7 @@ public class TestBase {
 	/**
 	 * 组件预参数（处理__fucn()以及${xxxx}）
 	 * 
-	 * @param apiDataBean
+	 * @param param
 	 * @return
 	 */
 	protected String buildParam(String param) {
@@ -60,9 +60,10 @@ public class TestBase {
 					&& !funcName.equals("bodyfile")) {
 				// 属于函数助手，调用那个函数助手获取。
 				value = FunctionUtil.getValue(funcName, args.split(","));
-				// 解析对应的函数失败
-				Assert.assertNotNull(value,
-						String.format("解析函数失败：%s。", funcName));
+				// 解析对应的函数失败\
+				assertThat(value).as(String.format("解析函数失败：%s。", funcName)).isNullOrEmpty();
+//				Assert.assertNotNull(value,
+//						String.format("解析函数失败：%s。", funcName));
 				param = StringUtil.replaceFirst(param, m.group(), value);
 			}
 		}
@@ -104,8 +105,9 @@ public class TestBase {
 			// 从公共参数池中获取值
 			value = getSaveData(replaceKey);
 			// 如果公共参数池中未能找到对应的值，该用例失败。
-			Assert.assertNotNull(value,
-					String.format("格式化参数失败，公共参数中找不到%s。", replaceKey));
+			assertThat(value).as(String.format("格式化参数失败，公共参数中找不到%s。", replaceKey)).isNullOrEmpty();
+//			Assert.assertNotNull(value,
+//					String.format("格式化参数失败，公共参数中找不到%s。", replaceKey));
 			param = param.replace(m.group(), value);
 		}
 		return param;
@@ -135,7 +137,7 @@ public class TestBase {
 		ReportUtil.log("验证数据：" + allVerify);
 		if (contains) {
 			// 验证结果包含
-			AssertUtil.contains(sourchData, allVerify);
+			assertThat(sourchData).contains(allVerify).as(String.format("期待'%s'包含'%s'，实际为不包含.", sourchData, allVerify));
 		} else {
 			// 通过';'分隔，通过jsonPath进行一一校验
 			Pattern pattern = Pattern.compile("([^;]*)=([^;]*)");
@@ -145,7 +147,8 @@ public class TestBase {
 				String exceptValue = getBuildValue(sourchData, m.group(2));
 				ReportUtil.log(String.format("验证转换后的值%s=%s", actualValue,
 						exceptValue));
-				Assert.assertEquals(actualValue, exceptValue, "验证预期结果失败。");
+				assertThat(actualValue).isNotEqualTo(exceptValue).as( "验证预期结果失败。");
+//				Assert.assertEquals(actualValue, exceptValue, "验证预期结果失败。");
 			}
 		}
 	}
@@ -225,9 +228,9 @@ public class TestBase {
 	 * 
 	 * @param clz
 	 *            需要转换的类
-	 * @param excelPath
+	 * @param excelPathArr
 	 *            所有excel的路径配置
-	 * @param sheetName
+	 * @param sheetNameArr
 	 *            本次需要过滤的sheet名
 	 * @return 返回数据
 	 * @throws DocumentException

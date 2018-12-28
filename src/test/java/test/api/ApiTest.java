@@ -23,11 +23,10 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.util.EntityUtils;
 import org.dom4j.DocumentException;
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import org.testng.annotations.Optional;
-
+import static org.assertj.core.api.Assertions.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -158,8 +157,9 @@ public class ApiTest extends TestBase {
 			if (StringUtil.isNotEmpty(apiDataBean.getStatus())) {
 				String apiStatus = apiDataBean.getStatus().trim();
 				apiStatus = apiStatus.substring(0,3);
-				Assert.assertEquals(responseStatus+"",apiStatus,
-						"返回状态码与预期不符合!");
+				assertThat(responseStatus).isNotEqualTo(apiStatus).as("返回状态码与预期不符合!");
+//				Assert.assertEquals(responseStatus+"",apiStatus,
+//						"返回状态码与预期不符合!");
 			} else {
 				// 非2开头状态码为异常请求，抛异常后会进行重跑
 				if (200 > responseStatus || responseStatus >= 400) {
@@ -184,7 +184,8 @@ public class ApiTest extends TestBase {
 				String filePath = "download/" + RandomUtil.getRandom(8, false)
 						+ fileType;
 				InputStream is = response.getEntity().getContent();
-				Assert.assertTrue(FileUtil.writeFile(is, filePath), "下载文件失败。");
+//				Assert.assertTrue(FileUtil.writeFile(is, filePath), "下载文件失败。");
+				assertThat(FileUtil.writeFile(is, filePath)).isFalse().as( "下载文件失败。");
 				// 将下载文件的路径放到{"filePath":"xxxxx"}进行返回
 				responseData = "{\"filePath\":\"" + filePath + "\"}";
 			} else {

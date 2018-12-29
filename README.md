@@ -141,3 +141,6 @@ username=$.username;id=$.userId
 - AssertJ替换Assert
 - 添加AssertJ添加对json的支持工具类：AssertJSON
 - 支持delete，put方法
+
+#2018/12/29
+- 修复生成网页乱码问题

@@ -273,8 +273,9 @@ public class ApiTest extends TestBase {
 			return postMethod;
 		}else {
 //			封装delete方法
-			HttpDelete deleteMethod = new HttpDelete(url);
+			MyHttpDelete deleteMethod = new MyHttpDelete(url);
 			deleteMethod.setHeaders(publicHeaders);
+			deleteMethod.setEntity(entity);
 			return deleteMethod;
 		}
 	}
